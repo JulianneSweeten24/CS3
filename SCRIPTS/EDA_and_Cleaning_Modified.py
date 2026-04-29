@@ -36,10 +36,7 @@ print('First threshold:',
 print('Second threshold:',
       df[df['length_group'] == 'medium']['log_length'].max())
 
-# -----------------------------
-# EDA: RAW LENGTH
-# -----------------------------
-
+# EDA: raw length
 df['length'].hist(bins=20, color='#128bb5')
 
 plt.title('IMDB Review Length (not log transformed)')
@@ -50,10 +47,7 @@ plt.grid(False)
 plt.savefig(output_path / "raw_review_length.png")
 plt.show()
 
-# -----------------------------
-# EDA: LOG LENGTH
-# -----------------------------
-
+# EDA: log-transforming length
 df['log_length'].hist(bins=20, color='#128bb5')
 
 plt.axvline(
