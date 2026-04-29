@@ -8,7 +8,7 @@ The rubric contains a more detailed breakdown of the project steps, along with s
 # Step 3: Read Articles within MATERIALS
 The articles provide supplemental text explaining the fundamental idea behind this project: negativity bias. It also features an article describing how RoBERTa works as a deep learning sentiment model, which was a major component of our project. Additionally, there's an article on Welch's t-test and ANOVA. References are included, as well.
 # Step 4: Open the DATA Folder
-There are several datasets we produced throughout the project. Download reviews_with_severity.csv from the DATA folder. A data appendix is also included to inform about the dataset.
+There are several datasets we produced throughout the project. Download reviews_with_severity.csv from the DATA folder. A data appendix is also included to inform about the dataset and exhibit some visualizations.
 # Step 5: Open SCRIPTS Folder
 Download WelchANOVA.py file. You will then run this script to perform Welch's ANOVA and a one-sided t-test, which will reveal whether the observed differences are statistically significant.
 # Step 6: Conclusions
