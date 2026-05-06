@@ -10,7 +10,7 @@ The articles provide supplemental text explaining the fundamental idea behind th
 # Step 4: Open the DATA Folder
 There are several datasets we produced throughout the project. Download both reviews_with_severity.csv and IMDB_Dataset.csv from the DATA folder. A data appendix is also included to inform about the dataset and exhibit some visualizations. 
 # Step 5: Open SCRIPTS Folder
-Download the WelchANOVA.py file and EDA_and_Cleaning_Modified.py file. First run EDA_and_Cleaning_Modified.py, which will generate visualizations including IMDB review character count and frequency distributions, a Q–Q plot, and an illustration of the effect of log transformation on the data distribution.
+Download the WelchANOVA.py file and EDA_and_Cleaning_Modified.py file. First run EDA_and_Cleaning_Modified.py using IMDB_Dataset.csv, which will generate visualizations including IMDB review character count and frequency distributions, a Q–Q plot, and an illustration of the effect of log transformation on the data distribution.
 
 You will then run WelchANOVA.py on the reviews_with_severity.csv dataset (calculated via RoBERTa) to perform Welch's ANOVA and a one-sided t-test, which will reveal whether the observed differences are statistically significant.
 
