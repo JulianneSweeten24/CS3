@@ -8,16 +8,16 @@ from statsmodels.formula.api import ols
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Load dataset (same folder as script)
+#Load dataset (same folder as script)
 review_data = pd.read_csv("reviews_with_severity.csv", engine="python", on_bad_lines="skip")
 
 review_data_clean = review_data[["review", "length_group", "roberta_severity"]].copy()
 
-# Clean review text and calculate length
+#Clean review text and calculate length
 review_data_clean["review_clean"] = review_data_clean["review"].str.replace(r"<.*?>", "", regex=True)
 review_data_clean["review_length"] = review_data_clean["review_clean"].str.len()
 
-# Sentiment and extremity features
+#Sentiment and extremity features
 review_data_clean["sentiment_group"] = np.where(
     review_data_clean["roberta_severity"] > 0,
     "positive",
@@ -29,8 +29,7 @@ review_data_clean["extremity"] = abs(review_data_clean["roberta_severity"])
 review_data_clean["length_group"] = review_data_clean["length_group"].astype("category")
 review_data_clean["sentiment_group"] = review_data_clean["sentiment_group"].astype("category")
 
-# ----------------------------------------------------------
-# Test 1: Do longer reviews tend to be positive or negative?
+#Test 1: Do longer reviews tend to be positive or negative?
 
 neg = review_data_clean[review_data_clean["sentiment_group"] == "negative"]["review_length"]
 pos = review_data_clean[review_data_clean["sentiment_group"] == "positive"]["review_length"]
@@ -55,7 +54,7 @@ if p_val < 0.05:
 else:
     print("No statistically significant difference in review length between negative and positive reviews.")
 
-# Saving results (witin same folder as script)
+#Saving results (witin same folder as script)
 pd.DataFrame([{
     "t_stat": t_stat,
     "p_value": p_val,
@@ -63,8 +62,7 @@ pd.DataFrame([{
     "mean_positive": mean_pos
 }]).to_csv("t_test_review_length_sentiment.csv", index=False)
 
-# -----------------------------------------------------------------------------------
-# Test 2: Do more extreme reviews vary by length group?
+#Test 2: Do more extreme reviews vary by length group?
 
 model = ols("extremity ~ C(length_group)", data=review_data_clean).fit()
 anova_table = sm.stats.anova_lm(model, typ=2)
@@ -103,7 +101,6 @@ print(pairwise_df)
 
 pairwise_df.to_csv("pairwise_extremity_length_group.csv", index=False)
 
-# ---------------------------
 # Plot: Extremity by length group
 extremity_summary = review_data_clean.groupby("length_group")["extremity"].mean().reset_index()
 
