@@ -12,7 +12,7 @@ There are several datasets we produced throughout the project. Download both rev
 # Step 5: Open SCRIPTS Folder
 Download the WelchANOVA.py file and EDA_and_Cleaning_Modified.py file. First run EDA_and_Cleaning_Modified.py, which will generate visualizations including IMDB review character count and frequency distributions, a Q–Q plot, and an illustration of the effect of log transformation on the data distribution.
 
-You will then run WelchANOVA.py to perform Welch's ANOVA and a one-sided t-test, which will reveal whether the observed differences are statistically significant.
+You will then run WelchANOVA.py on the reviews_with_severity.csv dataset (calculated via RoBERTa) to perform Welch's ANOVA and a one-sided t-test, which will reveal whether the observed differences are statistically significant.
 
 # Step 6: Conclusions
 Once you have obtained the results from the Welch’s ANOVA and t-tests, the technical component of the deliverable is complete. The remaining work involves interpreting these results, using the questions outlined in the rubric’s OUTPUT/DELIVERABLE section as a guide.
